@@ -8,8 +8,8 @@ defmodule MyApp.GenServer1 do
   def do_somthing do
     GenServer.call(__MODULE__, :do_something)
   end 
-
-	def handle_call(:do_something, _from, state) do
+  
+  def handle_call(:do_something, _from, state) do
     # timeout because of slow call here.
     result = do_something_slow()
     {:reply, result, state}
